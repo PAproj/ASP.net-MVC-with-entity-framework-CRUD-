@@ -1,0 +1,43 @@
+﻿@model List<_20mvc.Models.TBLFood>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllFood</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <p>
+        <button class="btn btn-dark my-4 text-center">@Html.ActionLink("Insert Data", "Insert")</button>
+    </p>
+    <table class="table-condensed table-bordered table-responsive table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Dish Name</th>
+            <th>Cruisine</th>
+            <th>Price</th>
+            <th>Discount</th>
+            
+        </tr>
+
+        @foreach (var f in Model)
+        {
+            <tr>
+                <td>@f.Id</td>
+                <td>@f.DishName</td>
+                <td>@f.Cuisine</td>
+                <td>@f.Price</td>
+                <td>@f.Discount</td>
+                <td>
+                    <button class="btn">@Html.ActionLink("Edit", "update", new { id = f.Id }) </button>
+                    <button class="btn">  @Html.ActionLink("Delete", "Delete", new { id = f.Id }) </button>
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

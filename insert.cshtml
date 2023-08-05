@@ -1,0 +1,36 @@
+﻿@model _20mvc.Models.TBLFood
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insert </title>
+</head>
+<body>
+    @using (Html.BeginForm("insertdata", "Food", FormMethod.Post))
+    {
+        <h3 class="my-4 text-center">Insert Data</h3>
+        <div class="text-center">
+            <label>Enter Dish Name</label>
+            @Html.TextBoxFor(a => a.DishName)
+            <br />
+            <label>Enter Cuisine</label>
+            @Html.TextBoxFor(a => a.Cuisine)
+            <br />
+            <label>Enter Price</label>
+            @Html.TextBoxFor(a => a.Price)
+            <br />
+            <label>Enter Discount</label>
+            @Html.TextBoxFor(a => a.Discount)
+            <br />
+            <input class="btn btn-danger" type="submit" value="Submit" />
+        </div>
+    }
+
+
+</body>
+</html>
